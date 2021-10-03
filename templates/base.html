@@ -204,7 +204,10 @@
       {% endif %}
 
       <ul class="social">
-        {% for name, link, rel in SOCIAL %}
+        {% for tuple in SOCIAL %}
+        {% set name = tuple.0 %}
+        {% set link = tuple.1 %}
+        {% set rel = tuple.2 if tuple.2 else None %}
           <li>
             <a{% if name == 'mastodon' %} rel="me"{% elif rel %} rel="{{ rel }}"{% endif %} class="sc-{{ name }}" href="{{ link }}" target="_blank">
               <i class="{% if name in ['envelope', 'rss'] %}fas{% else %}fab{% endif %} fa-{{ name }}"></i>
