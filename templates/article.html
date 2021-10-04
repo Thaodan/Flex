@@ -18,13 +18,13 @@
 {% block title %} &ndash; {{ article.title|striptags|escape }}{% endblock %}
 
 {% block content %}
-<article class="single">
+<article class="single h-entry">
   <header>
     {% if not ARTICLE_HIDE_TRANSLATION %}
       {% import 'partial/translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     {% endif %}
-    <h1 id="{{ article.slug }}">{{ article.title }}</h1>
+    <h1 class="p-name" id="{{ article.slug }}">{{ article.title }}</h1>
     <p>
       {{ _('Posted on %(when)s in %(category)s',
            when=article.locale_date,
@@ -46,7 +46,7 @@
     </script>
   {% endif %}
 
-  <div>
+  <div class="e-content">
     {{ article.content }}
   </div>
   <div class="tag-cloud">

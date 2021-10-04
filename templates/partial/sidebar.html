@@ -1,10 +1,10 @@
 <aside>
-  <div>
+  <div class="h-card">
     <a href="{{ SITEURL }}/">
       {% if SITELOGO %}
-      <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+      <img class="u-photo" src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
       {% else %}
-      <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+      <img class="u-photo" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
       {% endif %}
     </a>
 
@@ -13,7 +13,7 @@
     </h1>
 
     {% if SITESUBTITLE %}
-    <p>{{ SITESUBTITLE }}</p>
+    <p class="p-note">{{ SITESUBTITLE }}</p>
     {% endif %}
 
     {% if PLUGINS %}
